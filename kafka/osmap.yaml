@@ -1,0 +1,13 @@
+# -*- coding: utf-8 -*-
+# vim: ft=yaml
+Debian:
+  ver: 8
+  pkg: confluent-kafka-2.11
+  with_haveged: true
+  haveged_enabled: true
+  conf_dir: /etc/kafka
+  main_config: /etc/kafka
+  service: kafka-server
+  user: root
+  group: root
+  java_home: /usr/lib/jvm/default-java

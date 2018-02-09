@@ -1,0 +1,5 @@
+{% set comma = joiner(",") %}
+bootstrap.servers={% for node in mirrormaker_nodes %}{{ comma() ~ node ~ ":" ~ mirrormaker_port }}{% endfor %}{{""}}
+{% for key,value in mirrormaker_options.dictsort() %}
+{{ key ~ "=" ~ value }}
+{% endfor %}

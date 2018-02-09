@@ -1,0 +1,12 @@
+# -*- coding: utf-8 -*-
+# vim: ft=yaml
+kafka:
+  pkg: confluent-kafka-2.11
+  with_haveged: false
+  haveged_enabled: false
+  conf_dir: /etc/kafka
+  main_config: /etc/kafka
+  service: kafka-server
+  service_enabled: true
+  user: kafka
+  group: kafka

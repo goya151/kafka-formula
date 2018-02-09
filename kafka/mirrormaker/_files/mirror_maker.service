@@ -1,0 +1,12 @@
+[Unit] 
+Description=Starting mirror process of Kafka
+After=network.target
+
+[Service] 
+Type=simple
+User=kafka
+SyslogIdentifier=kafka-mirror
+ExecStart=/usr/bin/kafka-run-class isord kafka.tools.MirrorMaker -- --consumer.config /etc/kafka/mirrormaker/consumer.properties --num.streams 2 --producer.config /etc/kafka/mirrormaker/producer.properties
+
+[Install] 
+WantedBy=multi-user.target

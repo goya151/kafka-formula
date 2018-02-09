@@ -1,0 +1,9 @@
+trusty:
+  ver: 7
+  pkg: kafka
+  manager_pkg: confluent-kafka-2.11
+  conf_dir: /etc/kafka
+  main_config: /etc/kafka
+  service: kafka-server
+  user: root
+  group: root

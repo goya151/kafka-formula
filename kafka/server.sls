@@ -3,6 +3,7 @@
 
 include:
   - kafka
+  - kafka.mirrormaker
 
 kafka-systemd-unit:
   file.managed:
@@ -33,7 +34,7 @@ kafka-service:
       - pkg: confluent-kafka-2.11
       - file: kafka-environment
       - file: kafka-systemd-unit
-    {%- if kafka.restart_on_config_change == True %}
+{% if kafka.restart_on_config_change == True %}
     - watch:
       - file: kafka-config
-    {%- endif %}
+{% endif %}
