@@ -1,6 +1,3 @@
-include:
-  - kafka.mirrormaker
-
 kafka-pkg-setup:
   pkgrepo.managed:
     - name: deb [arch=amd64] http://packages.confluent.io/deb/3.2 stable main

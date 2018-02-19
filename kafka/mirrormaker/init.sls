@@ -11,9 +11,9 @@ kafka_mirrormaker-consumer-config:
     - source: salt://kafka/mirrormaker/_templates/config.properties.jinja
     - template: jinja
     - context: 
-        mirrormaker_nodes: {{ kafka['mirrormaker']['consumer']['nodes']|yaml_encode }} 
-        mirrormaker_port: {{ kafka['mirrormaker']['consumer']['port']|yaml_encode }}
-        mirrormaker_options: {{ kafka['mirrormaker']['consumer']['options']|yaml_encode }}
+        mirrormaker_nodes: {{ kafka['mirrormaker']['consumer']['nodes']|yaml }} 
+        mirrormaker_port: {{ kafka['mirrormaker']['consumer']['port'] }}
+        mirrormaker_options: {{ kafka['mirrormaker']['consumer']['options']|yaml }}
 
 kafka_mirrormaker-producer-config:
   file.managed:
@@ -25,9 +25,9 @@ kafka_mirrormaker-producer-config:
     - source: salt://kafka/mirrormaker/_templates/config.properties.jinja
     - template: jinja
     - context:
-        mirrormaker_nodes: {{ kafka['mirrormaker']['producer']['nodes']|yaml_encode }}
-        mirrormaker_port: {{ kafka['mirrormaker']['producer']['port']|yaml_encode }}
-        mirrormaker_options: {{ kafka['mirrormaker']['producer']['options']|yaml_encode }}
+        mirrormaker_nodes: {{ kafka['mirrormaker']['producer']['nodes']|yaml }}
+        mirrormaker_port: {{ kafka['mirrormaker']['producer']['port'] }}
+        mirrormaker_options: {{ kafka['mirrormaker']['producer']['options']|yaml }}
 
 kafka_mirrormaker-service:
   service.running:
